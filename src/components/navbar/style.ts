@@ -10,6 +10,11 @@ export const HeaderStyled = styled.header`
   padding-left: 65px;
   padding-right: 88px;
   position: relative;
+
+  @media screen and (max-width: 767px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 `;
 
 export const LogoContainer = styled.div`

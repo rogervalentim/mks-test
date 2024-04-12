@@ -19,6 +19,10 @@ export const CartContainer = styled(motion.div)`
   position: relative;
   padding-top: 36px;
   padding-right: 22px;
+
+  @media screen and (max-width: 767px) {
+    width: 300px;
+  }
 `;
 
 export const CartTitleCloseContainer = styled.div`
@@ -87,12 +91,20 @@ export const Total = styled.p`
   color: #ffffff;
   font-weight: 700;
   font-size: 28px;
+  
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const TotalPrice = styled.p`
   color: #ffffff;
   font-weight: 700;
   font-size: 28px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 export const FeedbackCart = styled.p `
@@ -100,4 +112,8 @@ export const FeedbackCart = styled.p `
   font-size: 18px;
   font-weight: 600;
   margin-top: 10px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 12px;
+  }
 `

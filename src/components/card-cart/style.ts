@@ -9,6 +9,12 @@ export const CardStyled = styled.div`
   height: 95px;
   border-radius: 8px;
   background-color: #ffffff;
+
+  
+  @media screen and (max-width: 767px) {
+    justify-content: center;
+    width: 100%;
+  }
 `;
 
 export const NameProduct = styled.p`
@@ -72,6 +78,10 @@ export const Price = styled.h2`
   font-weight: 700;
   font-size: 14px;
   color: #000000;
+
+  @media screen and (max-width: 767px) {
+    font-size: 10px;
+  }
 `;
 
 export const Separator = styled.div`
@@ -90,9 +100,8 @@ export const PositionButton = styled.div`
 
 export const RemoveProductButton = styled.button`
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 5px;
+  top: -9px; /* ajuste para alinhar à parte superior */
+  right: -9px; /* ajuste para alinhar à direita */
   width: 18px;
   height: 18px;
   border-radius: 18px;

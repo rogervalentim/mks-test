@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <CartProvider>
       <ReactQueryProvider>
-        <html>
+        <html lang="pt-BR">
           <body>
             <StyledComponentsRegistry>
               <Navbar />

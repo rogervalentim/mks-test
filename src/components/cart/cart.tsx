@@ -24,9 +24,7 @@ export function Cart() {
   
   const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
-
   function finalizarCompra() {
-   
     setPurchaseCompleted(true);
     ClearCart();
   }
@@ -67,7 +65,6 @@ export function Cart() {
         <FeedbackCart>Compra concluída com sucesso!</FeedbackCart>
          </div>
 )}
-
 
         {cart.length > 0  ?
         <>
