@@ -77,7 +77,7 @@ export function Cart() {
             R${total}
           </TotalPrice>
         </TotalContainer>
-        <CheckoutButton onClick={finalizarCompra}>Finalizar a compra</CheckoutButton> 
+        <CheckoutButton type="button" onClick={finalizarCompra}>Finalizar a compra</CheckoutButton> 
         </> 
         : 
         <div />

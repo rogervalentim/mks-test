@@ -12,6 +12,8 @@ type ICart = {
   cartItemCount: number;
   AddItemCart: (newItem: Product) => void;
   RemoveItemCart: (Item: Product) => void;
+  purchaseCompleted: boolean;
+  setPurchaseCompleted: React.Dispatch<React.SetStateAction<boolean>>;
   setShowCart: React.Dispatch<React.SetStateAction<boolean>>;
   showCart: boolean;
   removeProductFromCart: (Item: Product) => void;
@@ -31,6 +33,8 @@ function CartProvider({
     cart,
     total,
     cartItemCount,
+    purchaseCompleted,
+    setPurchaseCompleted,
     removeProductFromCart,
     ClearCart
   } = useCart();
@@ -45,6 +49,8 @@ function CartProvider({
         AddItemCart,
         RemoveItemCart,
         cartItemCount,
+        purchaseCompleted,
+        setPurchaseCompleted,
         removeProductFromCart,
         ClearCart
       }}

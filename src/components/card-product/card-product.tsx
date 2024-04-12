@@ -50,7 +50,9 @@ export function CardProduct(props: CardProductProps) {
           </H3Styled>
           <PriceContainer>
             <Price>
-              R${parseFloat(price)}
+              {price
+                ? `R$${parseFloat(price).toFixed(0)}`
+                : "Preço indisponível"}
             </Price>
           </PriceContainer>
         </ProductNamePrice>

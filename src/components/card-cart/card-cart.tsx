@@ -1,3 +1,4 @@
+import React from "react";
 import { useCartContext } from "@/context/use-cart-context";
 import { ProductWithTotal } from "@/types/product-with-total";
 import { Minus, Plus, X } from "lucide-react";
@@ -30,6 +31,7 @@ export function CardCart(props: ProductWithTotal) {
       <RemoveProductButton
         type="button"
         onClick={() => removeProductFromCart({ id, photo, name, price })}
+        data-testid="remove-button"
       >
         <X color="#ffffff" height={17} width={8} fontSize={14} />
       </RemoveProductButton>
@@ -42,22 +44,33 @@ export function CardCart(props: ProductWithTotal) {
         <Container>
           <QtdText>Qtd:</QtdText>
           <ButtonsContainer>
-            <ButtonPlus type="button" onClick={() => AddItemCart(props)}>
-              <Plus width={10} height={10} color="#000000" />
-            </ButtonPlus>
+            {amount &&
+              <ButtonPlus
+                data-testid="plus-button"
+                type="button"
+                onClick={() => AddItemCart(props)}
+              >
+                <Plus width={10} height={10} color="#000000" />
+              </ButtonPlus>}
             <Separator />
             <Amount>
               {amount}
             </Amount>
             <Separator />
-            <ButtonMinus type="button" onClick={() => RemoveItemCart(props)}>
+            <ButtonMinus
+              type="button"
+              onClick={() => RemoveItemCart(props)}
+              data-testid="minus-button"
+            >
               <Minus width={10} height={10} color="#000000" />
             </ButtonMinus>
           </ButtonsContainer>
         </Container>
 
         <Price>
-          {parseFloat(price)}
+          {price
+            ? `R$${parseFloat(price).toFixed(0)}`
+            : "Preço indisponível"}{" "}
         </Price>
       </CardStyled>
     </PositionButton>

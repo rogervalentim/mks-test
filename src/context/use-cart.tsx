@@ -9,6 +9,7 @@ export const useCart = () => {
   const [cart, setCart] = useState<Array<ProductWithTotal>>([])
   const [total, setTotal] = useState(0)
   const [cartItemCount, setCartItemCount] = useState(0)
+  const [purchaseCompleted, setPurchaseCompleted] = useState(false)
 
   const TotalResultsCart = (items: Array<ProductWithTotal>) => {
     const MyCart = items
@@ -36,6 +37,7 @@ export const useCart = () => {
       setCart(cartList)
       TotalResultsCart(cartList)
       TotalCarItemCount(cartList)
+
   
       return
     }
@@ -92,5 +94,7 @@ export const useCart = () => {
     showCart,
     removeProductFromCart,
     ClearCart,
+    purchaseCompleted,
+    setPurchaseCompleted,
   }
 }
