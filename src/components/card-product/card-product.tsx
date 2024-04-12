@@ -28,7 +28,7 @@ export function CardProduct(props: CardProductProps) {
 
     toast.success(`${name} adicionado ao carrinho!`, {
       position: "top-right",
-      duration: 2000
+      duration: 1000
     });
   };
 

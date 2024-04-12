@@ -11,14 +11,26 @@ import {
   CartTitleCloseContainer,
   CartWrapper,
   CheckoutButton,
+  FeedbackCart,
   Total,
   TotalContainer,
   TotalPrice
 } from "./style";
+import { useState } from "react";
+import Image from "next/image";
 
 export function Cart() {
   const { cart, total, ClearCart, setShowCart } = useCartContext();
+  
+  const [purchaseCompleted, setPurchaseCompleted] = useState(false);
 
+
+  function finalizarCompra() {
+   
+    setPurchaseCompleted(true);
+    ClearCart();
+  }
+  
   return (
     <CartWrapper>
       <CartContainer
@@ -36,16 +48,40 @@ export function Cart() {
         </CartTitleCloseContainer>
 
         <CartProductsContainer>
-          {cart.map(item => <CardCart {...item} key={item.id} />)}
+          {cart.length === 0 && !purchaseCompleted ? (
+          <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}> 
+            <Image src="./empty-cart.svg" alt="carrinho vazio"  width={130} height={130} />
+            <FeedbackCart>o seu carrinho está vazio</FeedbackCart>
+            </div>
+          )  : (
+            <>
+            {cart.map(item => <CardCart {...item} key={item.id} />)}
+            </>
+          )
+  }
         </CartProductsContainer>
+         
+        {purchaseCompleted && (
+          <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}> 
+        <Image src="./purchase-completed.svg" width={130} height={130} alt="imagem de compra realizada com sucesso" />
+        <FeedbackCart>Compra concluída com sucesso!</FeedbackCart>
+         </div>
+)}
 
+
+        {cart.length > 0  ?
+        <>
         <TotalContainer>
           <Total>Total:</Total>
           <TotalPrice>
             R${total}
           </TotalPrice>
         </TotalContainer>
-        <CheckoutButton>Finalizar a compra</CheckoutButton>
+        <CheckoutButton onClick={finalizarCompra}>Finalizar a compra</CheckoutButton> 
+        </> 
+        : 
+        <div />
+      }
       </CartContainer>
     </CartWrapper>
   );

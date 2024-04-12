@@ -94,3 +94,10 @@ export const TotalPrice = styled.p`
   font-weight: 700;
   font-size: 28px;
 `;
+
+export const FeedbackCart = styled.p `
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 10px;
+`
