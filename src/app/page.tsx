@@ -11,6 +11,7 @@ interface ProductsProps {
   name: string;
   photo: string;
   price: string;
+  description: string;
   countItens: number;
 }
 
@@ -77,6 +78,7 @@ export default function Home() {
           photo={product.photo}
           name={product.name}
           price={product.price}
+          description={product.description}
           countItens={product.countItens}
           onClick={(item) => AddItemCart(item)}
         />

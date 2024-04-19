@@ -21,10 +21,10 @@ type CardProductProps = {
 } & Product;
 
 export function CardProduct(props: CardProductProps) {
-  const { id, name, photo, price, onClick } = props;
+  const { id, name, photo, price, onClick, description } = props;
 
   const handleAddToCart = () => {
-    onClick({ id, photo, price, name });
+    onClick({ id, photo, price, name, description });
 
     toast.success(`${name} adicionado ao carrinho!`, {
       position: "top-right",
@@ -57,7 +57,7 @@ export function CardProduct(props: CardProductProps) {
           </PriceContainer>
         </ProductNamePrice>
         <Description>
-          Redesigned from scratch and completely revised.
+          {description}
         </Description>
       </CardStyled>
       <ButtonStyled onClick={handleAddToCart}>

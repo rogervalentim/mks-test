@@ -6,6 +6,7 @@ export const CardStyled = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 379px;
+  max-width: 100%;
   height: 95px;
   border-radius: 8px;
   background-color: #ffffff;
@@ -13,7 +14,7 @@ export const CardStyled = styled.div`
   
   @media screen and (max-width: 767px) {
     justify-content: center;
-    width: 100%;
+    width: 320px;
   }
 `;
 
@@ -100,8 +101,8 @@ export const PositionButton = styled.div`
 
 export const RemoveProductButton = styled.button`
   position: absolute;
-  top: -9px; /* ajuste para alinhar à parte superior */
-  right: -9px; /* ajuste para alinhar à direita */
+  top: -9px; 
+  right: -9px; 
   width: 18px;
   height: 18px;
   border-radius: 18px;

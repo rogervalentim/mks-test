@@ -21,7 +21,7 @@ export const CartContainer = styled(motion.div)`
   padding-right: 22px;
 
   @media screen and (max-width: 767px) {
-    width: 300px;
+    width: 100%;
   }
 `;
 
